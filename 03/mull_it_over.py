@@ -1,5 +1,5 @@
 import re
-from operator import add
+from operator import add, mul
 from functools import reduce
 
 # Define the pattern
@@ -14,5 +14,5 @@ matches = re.findall(pattern, text)
 # Convert matches to tuples of integers
 result = [(int(x), int(y)) for x, y in matches]
 
-print(reduce(add, map((lambda x: int(x[0]) * int(x[1])), matches)))
+print(reduce(add, map((lambda x: mul(int(x[0]), int(x[1]))), matches)))
 
